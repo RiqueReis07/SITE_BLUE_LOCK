@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLUE LOCK — Central do Egoísta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="menuTrigger" class="menu-trigger" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Sidebar -->
+  <div id="overlay" class="overlay"></div>
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-head">
+      <span class="sidebar-tag">ÍNDICE</span>
+      <button id="closeMenu" class="close-btn" aria-label="Fechar menu">&times;</button>
+    </div>
+    <ul class="sidebar-list">
+      <li><a href="#hero" class="side-link">00 — Abertura</a></li>
+      <li><a href="#escalacoes" class="side-link">01 — Escalações Blue Lock</a></li>
+      <li><a href="#momentos" class="side-link">02 — Melhores Momentos</a></li>
+      <li><a href="#liga" class="side-link">03 — Liga Neo Egoísta</a></li>
+      <li><a href="#newgen" class="side-link">04 — New Generation XI</a></li>
+      <li><a href="#leilao" class="side-link">05 — Leilão de Lances</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="hero">
+    <div class="hero-glow"></div>
+    <p class="hero-eyebrow">Projeto Blue Lock · 300 atacantes, 1 monstro</p>
+    <div class="hero-photo photo-slot">
+      <img src="fotos/logo.jpg" alt="Foto de capa"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.nextElementSibling.nextElementSibling.style.display='block';">
+      <span class="photo-icon" style="display:none;">📷</span>
+      <span class="photo-text" style="display:none;">Espaço para foto / logo</span>
+    </div>
+    <p class="hero-sub">Só existe espaço para um ego no topo. Role para descobrir as escalações, os melhores momentos, a Liga Neo Egoísta, a seleção New Generation XI e o leilão que decide quem sobe de nível.</p>
+    <div class="hero-scroll">↓ role para começar</div>
+  </header>
+
+  <!-- 01 ESCALAÇÕES -->
+  <section id="escalacoes" class="section section-field">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Escalações Blue Lock</h2>
+      <p class="section-desc">Três esquemas táticos idealizados a partir do elenco de Blue Lock. Passe o campo e toque em qualquer jogador para abrir a ficha dele.</p>
+    </div>
+
+    <div class="field-carousel">
+      <button class="arrow arrow-left" id="fieldPrev" aria-label="Formação anterior">&#10094;</button>
+
+      <div class="field-viewport">
+        <div class="pitch" id="pitch">
+          <div class="pitch-lines">
+            <div class="halfway"></div>
+            <div class="center-circle"></div>
+            <div class="box box-top"></div>
+            <div class="box box-bottom"></div>
+          </div>
+          <div class="players-layer" id="playersLayer"></div>
+        </div>
+        <p class="formation-label" id="formationLabel"></p>
+      </div>
+
+      <button class="arrow arrow-right" id="fieldNext" aria-label="Próxima formação">&#10095;</button>
+    </div>
+
+    <div class="dots" id="fieldDots"></div>
+
+    <div class="player-card" id="playerCard">
+      <div class="player-card-empty" id="playerCardEmpty">Toque em um jogador no campo acima para ver a ficha dele aqui.</div>
+      <div class="player-card-content" id="playerCardContent" hidden>
+        <div class="player-avatar photo-slot" id="playerAvatar"></div>
+        <div class="player-info">
+          <span class="player-role" id="playerRole"></span>
+          <h3 class="player-name" id="playerName"></h3>
+          <p class="player-desc" id="playerDesc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 MELHORES MOMENTOS -->
+  <section id="momentos" class="section section-moments">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Melhores Momentos</h2>
+    </div>
+
+    <div class="moments-carousel">
+      <button class="arrow arrow-left" id="momentPrev" aria-label="Momento anterior">&#10094;</button>
+      <div class="moment-viewport">
+        <div class="moment-track" id="momentTrack"></div>
+      </div>
+      <button class="arrow arrow-right" id="momentNext" aria-label="Próximo momento">&#10095;</button>
+    </div>
+    <div class="dots" id="momentDots"></div>
+  </section>
+
+  <!-- 03 LIGA NEO EGOÍSTA -->
+  <section id="liga" class="section section-league">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Liga Neo Egoísta</h2>
+      <p class="section-desc">Cinco clubes, cinco mestres, um único objetivo: provar qual ego é mais forte. Os capitães começam bloqueados — libere um de cada vez.</p>
+    </div>
+
+    <div class="captains-grid" id="captainsGrid"></div>
+
+    <button class="unlock-btn" id="unlockBtn">Liberar próximo capitão →</button>
+  </section>
+
+  <!-- 04 NEW GENERATION XI -->
+  <section id="newgen" class="section section-newgen">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">New Generation XI</h2>
+      <p class="section-desc">A seleção mundial dos melhores prospectos surgidos do projeto — o time que o mundo passou a observar de perto.</p>
+    </div>
+
+    <div class="newgen-carousel">
+      <button class="arrow arrow-left" id="newgenPrev" aria-label="Anterior">&#10094;</button>
+      <div class="newgen-viewport">
+        <div class="newgen-track" id="newgenTrack"></div>
+      </div>
+      <button class="arrow arrow-right" id="newgenNext" aria-label="Próximo">&#10095;</button>
+    </div>
+    <div class="dots" id="newgenDots"></div>
+  </section>
+
+   <!-- 05 LEILÃO DE LANCES -->
+  <section id="leilao" class="section section-auction">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Leilão de Lances</h2>
+      <p class="section-desc">O sistema do Ego cruza os pontos fortes de cada atacante com o interesse dos clubes europeus. Quanto mais completo o ego, maior o lance.</p>
+    </div>
+
+    <div class="auction-grid" id="auctionGrid"></div>
+  </section>
+
+  <footer class="site-footer">
+    <p>Site feito por um estudante de ADS para treinar as habilidades de HTML, CSS e JavaScript</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
